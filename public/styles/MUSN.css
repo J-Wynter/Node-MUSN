@@ -1,0 +1,782 @@
+body {
+    background-color: rgb(47, 45, 45);
+    /* the background image is a local file stored on my mac*/
+    background-image: url("../images/896db440-3324-4090-90de-7c623d015c53_gettyimages-154750826.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    overflow: scroll;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content,
+.content2,
+.apiHeader1,
+.apiHeader2,
+.upload,
+.friends {
+    margin-left: 1%;
+    display: inline-block;
+    /* overflow-wrap: break-word; */
+}
+
+.content,
+.content2,
+.Feed,
+.upload,
+.friends {
+    border-color: red;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 3px 3px black;
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Black w/ opacity */
+    vertical-align: top;
+}
+
+.content,
+.upload {
+    position: absolute;
+
+    width: 15%;
+    height: 30%;
+    overflow: scroll;
+
+    top: 15%;
+    background-color: #870808;
+}
+
+.content2 {
+    position: absolute;
+    bottom: 15%;
+    border-color: red;
+    border-width: 1px;
+    border-style: solid;
+    width: 15%;
+    height: 30%;
+    overflow: scroll;
+    box-shadow: 3px 3px black;
+}
+
+.apiHeader1,
+.apiHeader2 {
+    margin-top: 10px;
+    border-width: 1px;
+    width: 15%;
+    top: 10%;
+    position: absolute;
+}
+
+.apiHeader2 {
+    top: 50%;
+}
+
+p {
+    margin-left: 1px;
+}
+
+.upload,
+.friends {
+    position: absolute;
+    right: 5%;
+}
+
+.friends {
+    bottom: 15%;
+    width: 15%;
+    height: 30%;
+    background-color: #870808;
+
+
+}
+
+/* css for upload modal*/
+.uploadContent {
+    display: inline-block;
+    position: absolute;
+    bottom: 750px;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.form {
+    max-width: 300px;
+}
+
+/* css for text box inside upload modal*/
+.postText {
+    width: 20%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 11px;
+    height: 100px;
+    align-items: center;
+}
+
+/* css for vertical navbar on right side */
+.upload {
+    width: 15%;
+    margin: auto;
+    padding: 5px 0;
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.upload ul li {
+    list-style: none;
+    display: block;
+    margin: 5px 5px;
+    position: relative;
+
+}
+
+.upload ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+
+}
+
+.upload ul li::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #DA291C;
+    position: absolute;
+    left: -2px;
+    bottom: -5px;
+    transition: 0.18s;
+
+
+}
+
+.upload ul li:hover::after {
+    width: 60%;
+}
+
+.friends {
+    width: 15%;
+    margin: auto;
+    padding: 5px 0;
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.friends ul li {
+    list-style: none;
+    display: block;
+    margin: 5px 5px;
+    position: relative;
+
+}
+
+.friends ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+
+}
+
+.friends ul li::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #DA291C;
+    position: absolute;
+    left: -2px;
+    bottom: -5px;
+    transition: 0.18s;
+
+
+}
+
+.friends ul li:hover::after {
+    width: 100%;
+}
+
+.Feed {
+    position: absolute;
+    top: 55%;
+    right: 35%;
+    transform: translateY(-50%);
+    width: 30%;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.Feed p {
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
+
+.FeedImg {
+    max-width: 320px;
+}
+
+.logo {
+    width: 70px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.navbar {
+    width: 100%;
+    margin: auto;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(139, 17, 17, 0.9);
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #DA291C;
+    position: absolute;
+    left: -2px;
+    bottom: -5px;
+    transition: 0.18s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+/*search bar css*/
+.navbar input[type=text] {
+    /* float: right; */
+    padding: 6px;
+    border: none;
+    margin-top: 0px;
+    font-size: 17px;
+    height: 5px;
+    margin-left: 20px;
+}
+
+.navbar button {
+    float: right;
+    background-color: #DA291C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    height: 18px;
+    text-align: center;
+}
+
+/* Optional: Adjust button styles on hover */
+.navbar button:hover {
+    background-color: #e30b0b;
+    height: 20px;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: transparent;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.loginClose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.loginClose:hover,
+.loginClose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.CreateBtn {
+    right: 50px;
+    position: absolute;
+}
+
+button:hover {
+
+    background: transparent;
+    color: white;
+    border: 2px solid red;
+}
+
+button:active {
+    opacity: 0.7;
+    background: #DA291C;
+    color: white;
+
+}
+
+.emailaddress {
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 11px;
+    height: 10px;
+    width: 200px;
+    right: 50%
+}
+
+.userName {
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 11px;
+    height: 10px;
+    width: 200px;
+    right: 50%
+}
+
+/*General CSS for the password prompt*/
+.phone {
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 11px;
+    height: 10px;
+    width: 200px;
+    right: 50%
+}
+
+.password {
+    display: block;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+    right: 42.2%;
+    height: 10px;
+    width: 200px;
+}
+
+.submit {
+    display: block;
+    border-radius: 20px;
+    position: absolute;
+    right: 46%;
+    bottom: -320px;
+    border: 2px solid #DA291C;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    transition: opactiy 0.1s;
+    padding: 2px;
+    padding-right: 3%;
+    padding-left: 3%;
+    font-size: 17px;
+}
+
+.submit:hover {
+
+    background: transparent;
+    color: white;
+    border: 2px solid rgb(206, 5, 29);
+}
+
+.submit2 {
+    display: block;
+    border-radius: 20px;
+    position: absolute;
+    right: 46.5%;
+    bottom: -290px;
+    border: 2px solid #DA291C;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    transition: opactiy 0.1s;
+    padding: 2px;
+    padding-right: 2%;
+    padding-left: 2%;
+    font-size: 17px;
+}
+
+.submit2:hover {
+
+    background: transparent;
+    color: white;
+    border: 2px solid rgb(211, 5, 5);
+}
+
+.contentborder {
+    display: inline-block;
+    position: absolute;
+    bottom: 750px;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.contentborder h1 {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.contentborder p {
+    line-height: 30px;
+    font-weight: 300;
+    color: white;
+    transition: 1.5s;
+    text-align: center;
+}
+
+.contentborder p:hover {
+    color: #DA291C;
+}
+
+.h6 {
+    font-size: 25px;
+}
+
+.FeedImg {
+    max-width: 250px;
+    object-fit: contain;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 2px;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    width: 10%;
+    font-size: 18px;
+    position: absolute;
+    bottom: 3%;
+    right: -7px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.card2 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 430px;
+    margin: auto;
+    text-align: left;
+    font-family: arial;
+    position: relative;
+    bottom: -15%;
+    right: 0px;
+    height: 100px;
+    border-bottom: white;
+    border-style: solid;
+    display: block;
+    background-color: #DA291C;
+}
+
+.h6 {
+    font-size: 15px;
+}
+
+.FeedImg {
+    max-width: 230px;
+    object-fit: contain;
+}
+
+.card2 button {
+    border: none;
+    outline: 0;
+    padding: 2px;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    width: 10%;
+    font-size: 18px;
+    position: absolute;
+    bottom: 3%;
+    right: -7px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.card3 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 430px;
+    margin: auto;
+    text-align: left;
+    font-family: arial;
+    position: relative;
+    bottom: -25%;
+    right: 0px;
+    height: 100px;
+    border-bottom: white;
+    border-style: solid;
+    display: block;
+    background-color: #DA291C;
+}
+
+.FeedImg {
+    max-width: 250px;
+    object-fit: contain;
+}
+
+.card3 button {
+    border: none;
+    outline: 0;
+    padding: 2px;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    width: 10%;
+    font-size: 18px;
+    position: absolute;
+    bottom: 3%;
+    right: -7px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.submit:hover {
+
+    background: transparent;
+    color: white;
+    border: 2px solid rgb(206, 5, 29);
+}
+
+.logout {
+    display: inline-block;
+    border-radius: 20px;
+    border: 2px solid #DA291C;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    transition: opactiy 0.1s;
+    padding: 2px;
+    padding-right: 2%;
+    padding-left: 2%;
+    font-size: 17px;
+}
+
+.logout:hover {
+    background: transparent;
+    color: white;
+    border: 2px solid rgb(211, 5, 5);
+}
+
+/* Style for the search container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Style for the search input */
+#userSearchQuery {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+/* Style for the search button */
+.searchButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.searchButton:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+}
+
+/* Style for the results container */
+.results-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e40808;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style for each result item */
+.result-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(240, 11, 11);
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+/* "Add Friend" button styling within each result item */
+.follow-btn {
+    padding: 5px 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+    /* Align the button to the right */
+}
+
+.follow-btn:hover {
+    background-color: darkgreen;
+}
+
+/* Style for the posts container */
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
+    /* Center the container itself */
+    padding: 20px;
+}
+
+/* Individual post styling */
+.post {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    /* Post width matches the container's width */
+    margin-bottom: 20px;
+    /* Space between posts */
+    padding: 15px;
+    border-radius: 8px;
+    /* Softens the edges */
+}
+
+.post-title {
+    margin: 0;
+    color: #333;
+}
+
+.post-content,
+.post-author {
+    color: #666;
+    line-height: 1.6;
+    /* Makes text more readable */
+}
+
+.post-author {
+    font-style: italic;
+    margin-top: 10px;
+    /* Space between the content and author info */
+}
+
+table {
+    background-color: #870808;
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Add a border and some padding to table cells */
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+/* Style the table headers */
+th {
+    background-color: #870808;
+}
+
+/* Hover effect for table rows */
+tr:hover {
+    background-color: #f70202;
+    opacity: 0.7;
+}
+
+/* Add some spacing below the table for aesthetics */
+.content2 {
+    margin-bottom: 20px;
+}

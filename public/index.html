@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles/MUSN.css">
+    <title> MUSN </title>
+    <link rel="icon" type="image/png" href="images/spotlogo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!--Navigation bar  -->
+
+    <header class="navbar">
+        <img src="images/manchester-united-f-c-desktop-wallpaper-1080p-high-definition-television-others-ecf486fce0e7580992a552bb44eb3a32.png"
+            class="logo" alt="">
+        <div id="loggedInUser" class="loggedInUser"> Create an account or login</div>
+
+        <ul>
+            <li id="createLink"><a href="#CreateAccount">Create Account</a></li>
+            <li id="loginLink"><a href="#Login">Login</a></li>
+            <li id="settingsLink"><a href="#Settings">Settings</a></li>
+        </ul>
+        <input id="userSearchQuery" class="search" type="text" placeholder="Search..">
+        <!-- Adjusted the button to call searchUsers() on click -->
+        <button type="submit" class="searchButton" onclick="searchUsers()">
+            <i class="fa fa-search"></i>
+        </button>
+        <div>
+            <input type="submit" value="Logout" id="logoutSubmit" onclick="logout()" class="logout">
+        </div>
+    </header>
+    <!-- Container to display search results -->
+    <!-- Modal Structure -->
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Search Results</h2>
+            <div id="searchResults" class="results-container"></div>
+        </div>
+    </div>
+
+    <!--Content on page -->
+    <h2 id="apiHeader1" class='apiHeader1'>Next 10 Fixtures</h2>
+    <div id="apiBox1" class="content">
+
+    </div>
+
+    <h2 id="apiHeader2" class='apiHeader2'></h2>
+    <div id="apiBox2" class="content2">
+
+    </div>
+
+    <div class="friends" id="friends">
+        <h2>Friend list</h2>
+        <ul id="friendsList">
+            <li id="logFriendList"><a href="#Post">Login to view your friends</a></li>
+
+        </ul>
+    </div>
+    <!-- Main container for posts -->
+    <div id="postsContainer" class="posts-container"></div>
+
+    <div id="upload" class="upload">
+        <h5>Upload</h5>
+        <ul>
+            <li id="uploadPost"><a href="#Post">Create a post</a></li>
+            <li id="Stories"><a href="Stories">News Api</a></li>
+            <li id="ClubHistory"><a href="https://www.manutd.com/en/History/History-by-Decade">Club History</a></li>
+            <li id="Legends"><a href="https://www.manutd.com/en/players-and-staff/Legends">Club Legends</a></li>
+            <li id="Honours"><a href="https://www.manutd.com/en/History/Trophy-Room">Honours</a></li>
+        </ul>
+
+    </div>
+
+    <!-- The Account creation Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+        </div>
+        <div class="contentborder" id="createborder">
+            <h1>
+                Create Account
+            </h1>
+            <p> Enter your email, phone number and create your password below:</p>
+            <input class="emailaddress" id="email" type="email" placeholder="BillBob@example.com" value="" />
+
+            <input class="password" id="password" type="password" placeholder="Enter Password" value="" />
+
+            <input class="phone" id="phone" type="tel" minlength="11" maxlength="11" value=""
+                placeholder="Register Phone number" />
+            <input class="userName" id="username" type="text" value="" placeholder="Username" />
+
+            <input class="submit" onclick="validation()" id="submit" type="submit" value="Create" />
+        </div>
+    </div>
+
+    <!-- The Login Modal -->
+    <div id="loginModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="loginClose">&times;</span>
+        </div>
+        <div class="contentborder" id="createborder2">
+            <h1>
+                Login
+            </h1>
+            <h2 id="loginStatus"></h2>
+            &#9990;
+            <input class="password" id="loginPassword" type="password" placeholder="Enter Password" value="" />
+            <input class="phone" id="loginPhone" type="tel" minlength="11" maxlength="11" value=""
+                placeholder="Register Phone number" />
+
+            <input class="submit" onclick="Login()" id="loginSubmit" type="submit" value="Login" />
+        </div>
+
+
+
+    </div>
+    <div id="uploadModal" class="modal">
+
+        <!-- Modal create content -->
+        <div class="modal-content">
+            <span class="loginClose">&times;</span>
+        </div>
+        <div class="uploadContent" id="uploadContent">
+            <h1>
+                Create a post
+            </h1>
+            <div>
+                <!-- <label for="postText">Create a post:</label><br> -->
+                <input class="postText" id="postText" type="text" placeholder="What's happening?" value="" /><br>
+                <input class="postText" id="postTitle" type="text" placeholder="What's happening?" value="" /><br>
+
+                <!-- <label for="imgUpload">Upload a file:</label><br> -->
+                <input class="imgUpload" id="myFile" type="file" />
+                <button type="submit" class="uploadBtn" id="uploadBtn" onclick="createPost()"> &#10154;</button>
+            </div>
+            <div id="serverResponse"></div>
+            <div id="imgPreview"></div>
+        </div>
+    </div>
+    <script src="/styles/Front.js"></script>
+</body>
+
+</html>
