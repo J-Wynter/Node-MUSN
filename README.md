@@ -1,5 +1,5 @@
 # Node-MUSN
-This a Javascipt project where i use node.js to create a social network hosted locally about the football team manchester united.
+This a vanilla Javascipt project where i use node.js to create a social network hosted locally about the football team manchester united with data stored in MongoDB as my database.
 I use API's to dynamically track the teams upcoming fixtures, and keep up to date with the squad.
 I use data validation to allow users to create login to multiple accounts as long as they have different phone numbers and allow them to make posts.
 A fuctional search bar was added to allow users to search for friends and their posts
